@@ -34,4 +34,12 @@ ul {
 .main-nav ul li a:hover{
 color: grey;
 }
+.user-actions{
+    display: flex;
+    align-items: center;
+}
+.user-actions a{
+    font-size: 1.2em;
+    margin-left: 20px;
+}
 
