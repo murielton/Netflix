@@ -11,3 +11,27 @@ a{
 ul {
     list-style: none;
 }
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color:rgba(20,20,20,0.8);
+    position: fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+}
+.main-nav ul{
+    display:flex;
+}
+.main-nav ul li{
+    margin-right: 20px;
+}
+.main-nav ul li a{
+    transition: color 0.3 ease;
+}
+.main-nav ul li a:hover{
+color: grey;
+}
+
