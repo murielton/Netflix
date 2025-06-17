@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Jogo</title>
+</head>
+<body>
+    <h2>Cadastrar Jogo</h2>
+    <form id="formjogo">
+        <label for="jogo">Jogo</label>
+        <input type="text" id="jogo" name="jogo" required>
+        <br>
+        <label for="ano">Ano:</label>
+        <input type="text" id="ano" name="ano" required>
+        <br>
+        <label for="plataforma">Plataforma</label>
+        <select name="plataforma" id="plataforma">
+        <option value="">Selecione...</option>
+        <option value="pc">Pc</option>
+        <option value="console">Console</option>
+        <option value="mobile">Mobile</option>
+        <option value="outros">Outros</option>
+    </select>
+
+        <label for="generodojogo">GeneroDoJogo</label>
+        <select name="generodojogo" id="GeneroDoJogo">
+        <option value="">Selecione...</option>
+        <option value="acao">ação</option>
+        <option value="esportes">Esportes</option>
+        <option value="estrategia">Estratégia</option>
+        <option value="puzzle">Puzzle</option>
+        <option value="rpg">Rpg</option>
+        <option value="outros">outros</option>
+    
+        </select>
+        <button type="submit">Cadastrar Jogo</button>
+    </form>
+<h3>Cadastrar Jogo</h3>
+<ul id="listajogos"></ul>
+<script src="jogos.js"></script>
+</body>
+</html>
