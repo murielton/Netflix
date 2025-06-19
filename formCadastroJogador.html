@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Jogador da Seleção</title>
+</head>
+<body>
+    <h1>Cadastro de Jogador</h1>
+    <form id="formJogador">
+        <label for="nome">Nome do Jogador</label>
+        <input type="text" id="nome" name="nome"required><br>
+        <label>Habilidades:</label><br>
+        <label><input type="checkbox" name="habilidades" value="Passe">Passe</label><br>
+        <label><input type="checkbox" name="habilidades" value="Drible">Drible</label><br>
+        <label><input type="checkbox" name="habilidades" value="Chute">Chute</label><br>
+        <label><input type="checkbox" name="habilidades" value="Defesa">Defesa</label><br>
+        <label><input type="checkbox" name="habilidades" value="Velocidade">Velocidade</label><br>
+    
+        <label>Posição:</label>
+        <label><input type="radio" name="posição" value="Atacante">Atacante</label><br>
+        <label><input type="radio" name="posição" value="MeioCampo">MeioCampo</label><br>
+        <label><input type="radio" name="posição" value="Goleiro">Goleiro</label><br>
+        <label><input type="radio" name="posição" value="Zagueiro">Zagueiro</label><br>
+        <label><input type="radio" name="posição" value="Lateral">Lateral</label><br>
+        <br><br>
+        <label for="estreia">Data de estreia da Seleção:</label>
+        <input type="date" id="estreia" name="estreia"required><br><br>
+        <button type="submit">Cadastrar Jogador</button>
+    </form><br><br>
+    <h2>Jogadores Cadastrados</h2>
+    <ul id="listaJogadores">
+
+    </ul>
+    <script src="formCadastroJogador.js"></script>
+</body>
+</html>
