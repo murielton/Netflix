@@ -1,4 +1,4 @@
-const form = document.getElementById('formJogador');
+ const form = document.getElementById('formCadastroJogador');
  const lista = document.getElementById('listaJogadores');
  form.addEventListener('submit', function(event) {
     event.preventDefault();

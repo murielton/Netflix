@@ -1,0 +1,145 @@
+<h1 class="text-3xl font-bold mb-6 text-amber-800 border-b-2 border-amber-300 pb-2 flex items-center">
+    <i class="fas fa-users mr-3"></i> cadastroClientes
+</h1>
+
+
+<section class="mb-12 bg-white p-6 rounded-lg shadow-md border border-amber-200">
+    <h2 class="text-2xl font-bold mb-4 text-amber-800">Novo Cliente</h2>
+    <form id="cliente-form" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <div class="md:col-span-2">
+            <label for="cliente-nome" class="block text-sm font-medium text-amber-800 mb-1">Nome Completo*</label>
+            <input type="text" id="cliente-nome" required
+                   class="w-full px-3 py-2 border border-amber-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500">
+        </div>
+
+        
+        <div>
+            <label for="cliente-email" class="block text-sm font-medium text-amber-800 mb-1">E-mail*</label>
+            <input type="email" id="cliente-email" required
+                   class="w-full px-3 py-2 border border-amber-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500">
+        </div>
+
+       
+        <div>
+            <label for="cliente-telefone" class="block text-sm font-medium text-amber-800 mb-1">Telefone*</label>
+            <input type="tel" id="cliente-telefone" required
+                   class="w-full px-3 py-2 border border-amber-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+                   placeholder="(00) 00000-0000">
+        </div>
+
+       
+        <div>
+            <label for="cliente-nascimento" class="block text-sm font-medium text-amber-800 mb-1">Data de Nascimento</label>
+            <input type="date" id="cliente-nascimento"
+                   class="w-full px-3 py-2 border border-amber-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500">
+        </div>
+
+        
+        <div>
+            <label class="block text-sm font-medium text-amber-800 mb-2">Nível de Fidelidade</label>
+            <div class="space-y-2">
+                <div class="flex items-center">
+                    <input type="radio" id="fidelidade-bronze" name="fidelidade" value="Bronze" checked
+                           class="h-4 w-4 text-amber-600 focus:ring-amber-500">
+                    <label for="fidelidade-bronze" class="ml-2 text-sm text-amber-800">Bronze (5% de desconto)</label>
+                </div>
+                <div class="flex items-center">
+                    <input type="radio" id="fidelidade-prata" name="fidelidade" value="Prata"
+                           class="h-4 w-4 text-amber-600 focus:ring-amber-500">
+                    <label for="fidelidade-prata" class="ml-2 text-sm text-amber-800">Prata (10% de desconto)</label>
+                </div>
+                <div class="flex items-center">
+                    <input type="radio" id="fidelidade-ouro" name="fidelidade" value="Ouro"
+                           class="h-4 w-4 text-amber-600 focus:ring-amber-500">
+                    <label for="fidelidade-ouro" class="ml-2 text-sm text-amber-800">Ouro (15% de desconto)</label>
+                </div>
+            </div>
+        </div>
+
+       
+        <div class="flex items-center">
+            <input type="checkbox" id="cliente-promocoes" checked
+                   class="h-4 w-4 text-amber-600 focus:ring-amber-500 border-amber-300 rounded">
+            <label for="cliente-promocoes" class="ml-2 text-sm text-amber-800">Deseja receber promoções por e-mail?</label>
+        </div>
+
+       
+        <div class="md:col-span-2">
+            <label class="block text-sm font-medium text-amber-800 mb-2">Tipos de Café Preferidos</label>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
+                <div class="flex items-center">
+                    <input type="checkbox" id="cafe-expresso" value="Expresso"
+                           class="h-4 w-4 text-amber-600 focus:ring-amber-500 border-amber-300 rounded">
+                    <label for="cafe-expresso" class="ml-2 text-sm text-amber-800">Expresso</label>
+                </div>
+                <div class="flex items-center">
+                    <input type="checkbox" id="cafe-cappuccino" value="Cappuccino"
+                           class="h-4 w-4 text-amber-600 focus:ring-amber-500 border-amber-300 rounded">
+                    <label for="cafe-cappuccino" class="ml-2 text-sm text-amber-800">Cappuccino</label>
+                </div>
+                <div class="flex items-center">
+                    <input type="checkbox" id="cafe-latte" value="Latte"
+                           class="h-4 w-4 text-amber-600 focus:ring-amber-500 border-amber-300 rounded">
+                    <label for="cafe-latte" class="ml-2 text-sm text-amber-800">Latte</label>
+                </div>
+                <div class="flex items-center">
+                    <input type="checkbox" id="cafe-mocha" value="Mocha"
+                           class="h-4 w-4 text-amber-600 focus:ring-amber-500 border-amber-300 rounded">
+                    <label for="cafe-mocha" class="ml-2 text-sm text-amber-800">Mocha</label>
+                </div>
+                <div class="flex items-center">
+                    <input type="checkbox" id="cafe-americano" value="Americano"
+                           class="h-4 w-4 text-amber-600 focus:ring-amber-500 border-amber-300 rounded">
+                    <label for="cafe-americano" class="ml-2 text-sm text-amber-800">Americano</label>
+                </div>
+                <div class="flex items-center">
+                    <input type="checkbox" id="cafe-outro" value="Outro"
+                           class="h-4 w-4 text-amber-600 focus:ring-amber-500 border-amber-300 rounded">
+                    <label for="cafe-outro" class="ml-2 text-sm text-amber-800">Outro</label>
+                </div>
+            </div>
+        </div>
+
+      
+        <div class="md:col-span-2">
+            <button type="submit" class="bg-amber-600 text-white px-4 py-2 rounded-md hover:bg-amber-700 transition">
+                <i class="fas fa-user-plus mr-2"></i> Cadastrar Cliente
+            </button>
+        </div>
+    </form>
+</section>
+
+
+<section>
+    <h2 class="text-2xl font-bold mb-6 text-amber-800 border-b-2 border-amber-300 pb-2">Clientes Cadastrados</h2>
+    <div class="bg-white rounded-lg shadow-md overflow-hidden border border-amber-200">
+        <div class="overflow-x-auto">
+            <table class="min-w-full divide-y divide-amber-200">
+                <thead class="bg-amber-100">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-amber-800 uppercase tracking-wider">Nome</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-amber-800 uppercase tracking-wider">E-mail</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-amber-800 uppercase tracking-wider">Telefone</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-amber-800 uppercase tracking-wider">Fidelidade</th>
+                        <th class="px-6 py-3 text-left text-xs font-medium text-amber-800 uppercase tracking-wider">Promoções</th>
+                    </tr>
+                </thead>
+                <tbody id="clientes-lista" class="bg-white divide-y divide-amber-200">
+                   
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-amber-800">João Silva</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-amber-800">joao@example.com</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-amber-800">(11) 99999-9999</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-amber-800">
+                            <span class="px-2 py-1 rounded-full text-xs bg-amber-200 text-amber-800">Prata</span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-amber-800">
+                            <i class="fas fa-check text-green-500"></i>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

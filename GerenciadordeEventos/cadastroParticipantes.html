@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Participantes</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <nav class="bg-blue-600 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <span class="text-xl font-bold">Eventos Esportivos</span>
+                <div class="hidden md:flex space-x-4">
+                    <a href="index.html" class="px-3 py-2 rounded hover:bg-blue-700 transition">Início</a>
+                    <a href="eventos.html" class="px-3 py-2 rounded hover:bg-blue-700 transition">Cadastro de Eventos</a>
+                    <a href="participantes.html" class="px-3 py-2 rounded bg-blue-800 hover:bg-blue-700 transition">Cadastro de Participantes</a>
+                </div>
+                <button class="md:hidden focus:outline-none" id="menu-toggle">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="md:hidden hidden mt-2" id="mobile-menu">
+                <a href="index.html" class="block px-3 py-2 rounded hover:bg-blue-700 transition">Início</a>
+                <a href="eventos.html" class="block px-3 py-2 rounded hover:bg-blue-700 transition">Cadastro de Eventos</a>
+                <a href="participantes.html" class="block px-3 py-2 rounded bg-blue-800 hover:bg-blue-700 transition">Cadastro de Participantes</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="bg-white rounded-lg shadow-md p-6 max-w-4xl mx-auto">
+            <h1 class="text-3xl font-bold text-center text-blue-600 mb-6">Cadastro de Participantes</h1>
+            
+            <form id="participanteForm" class="space-y-4">
+                <div>
+                    <label for="nomeCompleto" class="block text-sm font-medium text-gray-700">Nome Completo</label>
+                    <input type="text" id="nomeCompleto" name="nomeCompleto" required 
+                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 border">
+                </div>
+                
+                <div>
+                    <label for="idade" class="block text-sm font-medium text-gray-700">Idade</label>
+                    <input type="number" id="idade" name="idade" min="1" max="120" required 
+                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 border">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Gênero</label>
+                    <div class="mt-2 space-y-2">
+                        <div class="flex items-center">
+                            <input id="masculino" name="genero" type="radio" value="Masculino" required 
+                                   class="h-4 w-4 border-gray-300 text-blue-600 focus:ring-blue-500">
+                            <label for="masculino" class="ml-2 block text-sm text-gray-700">Masculino</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="feminino" name="genero" type="radio" value="Feminino" 
+                                   class="h-4 w-4 border-gray-300 text-blue-600 focus:ring-blue-500">
+                            <label for="feminino" class="ml-2 block text-sm text-gray-700">Feminino</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="outro" name="genero" type="radio" value="Outro" 
+                                   class="h-4 w-4 border-gray-300 text-blue-600 focus:ring-blue-500">
+                            <label for="outro" class="ml-2 block text-sm text-gray-700">Outro</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <label for="eventoParticipacao" class="block text-sm font-medium text-gray-700">Evento que deseja participar</label>
+                    <select id="eventoParticipacao" name="eventoParticipacao" required 
+                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 border">
+                        <option value="">Selecione um evento</option>
+                        <option value="Copa de Futebol Interbairros">Copa de Futebol Interbairros</option>
+                        <option value="Torneio de Vôlei Praia">Torneio de Vôlei Praia</option>
+                        <option value="Maratona da Cidade">Maratona da Cidade</option>
+                        <option value="Campeonato de Basquete 3x3">Campeonato de Basquete 3x3</option>
+                    </select>
+                </div>
+                
+                <div class="flex items-center">
+                    <input type="checkbox" id="aceitaRegulamento" name="aceitaRegulamento" required 
+                           class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+                    <label for="aceitaRegulamento" class="ml-2 block text-sm text-gray-700">Aceito o regulamento</label>
+                </div>
+                
+                <div class="pt-4">
+                    <button type="submit" 
+                            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition">
+                        Cadastrar Participante
+                    </button>
+                </div>
+            </form>
+            
+            <div class="mt-12">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Participantes Cadastrados</h2>
+                <div id="listaParticipantes" class="space-y-4">
+                   
+                    <p class="text-gray-500 italic">Nenhum participante cadastrado ainda.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-6 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2023 Sistema de Eventos Esportivos. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="cadastroParticipantes.js"></script>
+</body>
+</html>
