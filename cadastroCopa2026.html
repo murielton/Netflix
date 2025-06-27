@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Seleções - Copa do Mundo 2026</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #006341;
+            text-align: center;
+        }
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #006341;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #004d33;
+        }
+        #selecoes-list {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .selecao-item {
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+        }
+        .selecao-item:last-child {
+            border-bottom: none;
+        }
+        .selecao-header {
+            font-weight: bold;
+            color: #006341;
+            margin-bottom: 5px;
+        }
+        .bandeira {
+            width: 40px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cadastro de Seleções - Copa do Mundo 2026</h1>
+    
+    <div class="form-container">
+        <form id="selecaoForm">
+            <div class="form-group">
+                <label for="nome">Nome da Seleção:</label>
+                <input type="text" id="nome" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="continente">Continente:</label>
+                <select id="continente" required>
+                    <option value="">Selecione...</option>
+                    <option value="América">América</option>
+                    <option value="Europa">Europa</option>
+                    <option value="África">África</option>
+                    <option value="Ásia">Ásia</option>
+                    <option value="Oceania">Oceania</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="titulos">Número de títulos:</label>
+                <input type="number" id="titulos" min="0" value="0" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="jogador">Jogador destaque:</label>
+                <input type="text" id="jogador" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="ultimaParticipacao">Ano da última participação na Copa:</label>
+                <input type="number" id="ultimaParticipacao" min="1930" max="2022" value="2022" required>
+            </div>
+            
+            <button type="submit">Cadastrar Seleção</button>
+        </form>
+    </div>
+    
+    <div id="selecoes-list">
+        <h2>Seleções Cadastradas</h2>
+        <div id="selecoes-container">
+           
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('selecaoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+           
+            const nome = document.getElementById('nome').value;
+            const continente = document.getElementById('continente').value;
+            const titulos = document.getElementById('titulos').value;
+            const jogador = document.getElementById('jogador').value;
+            const ultimaParticipacao = document.getElementById('ultimaParticipacao').value;
+            
+            
+            const selecaoDiv = document.createElement('div');
+            selecaoDiv.className = 'selecao-item';
+            
+            
+            let bandeiraEmoji = '';
+            switch(continente) {
+                case 'América': bandeiraEmoji = '🇧🇷'; break; 
+                case 'Europa': bandeiraEmoji = '🇪🇺'; break;
+                case 'África': bandeiraEmoji = '🇿🇦'; break;
+                case 'Ásia': bandeiraEmoji = '🇯🇵'; break;
+                case 'Oceania': bandeiraEmoji = '🇦🇺'; break;
+                default: bandeiraEmoji = '🏳️';
+            }
+            
+            selecaoDiv.innerHTML = `
+                <div class="selecao-header">
+                    <span class="bandeira">${bandeiraEmoji}</span>
+                    ${nome}
+                </div>
+                <div><strong>Continente:</strong> ${continente}</div>
+                <div><strong>Títulos:</strong> ${titulos} copa(s) do mundo</div>
+                <div><strong>Jogador Destaque:</strong> ${jogador}</div>
+                <div><strong>Última Participação:</strong> ${ultimaParticipacao}</div>
+            `;
+            
+            
+            document.getElementById('selecoes-container').prepend(selecaoDiv);
+            
+           
+            document.getElementById('selecaoForm').reset();
+            document.getElementById('titulos').value = 0;
+            document.getElementById('ultimaParticipacao').value = 2022;
+        });
+    </script>
+</body>
+</html>
